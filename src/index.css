@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+
+h2 > .table {
+  text-align: center;
+}
+
+.inputField {
+  display: flex;
+}
+
+th {
+  min-width: 75px;
+}
