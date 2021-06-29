@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Expense } from "./Expense";
+// import { Expense } from "./Expense";
 
 const Table = () => {
   return (
@@ -15,9 +15,7 @@ const Table = () => {
             <th>Type</th>
           </tr>
         </thead>
-        <tbody>
-          <Expense />
-        </tbody>
+        <tbody>{/* <Expense /> */}</tbody>
       </table>
     </div>
   );

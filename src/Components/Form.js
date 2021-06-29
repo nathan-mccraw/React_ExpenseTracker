@@ -10,17 +10,19 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newExpense = {
-      ItemPurchased,
-      LocationOfPurchase,
-      DateOfExpense,
-      CostOfExpense,
-      PaymentMethod,
+      item: ItemPurchased,
+      location: LocationOfPurchase,
+      date: DateOfExpense,
+      cost: CostOfExpense,
+      method: PaymentMethod,
     };
-    console.log(newExpense);
-    ExpenseArray.push(newExpense);
-    console.log(ExpenseArray);
+
+    ExpenseArray.length
+      ? setExpenseArray((expense) => [expense, ...ExpenseArray])
+      : setExpenseArray([newExpense]);
     e.target.reset();
   };
+
   return (
     <div className="Form">
       <h2>Add an item:</h2>
@@ -71,7 +73,7 @@ const Form = () => {
             onChange={(e) => setPaymentMethod(e.target.value)}
           >
             <option value="cash">Cash</option>
-            <option value="cebt">Debt</option>
+            <option value="debt">Debt</option>
             <option value="credit">Credit</option>
           </select>
         </div>
