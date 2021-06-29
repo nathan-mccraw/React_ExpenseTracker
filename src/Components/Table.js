@@ -1,7 +1,6 @@
-import { useState } from "react";
-// import { Expense } from "./Expense";
+import ExpenseTable from "./ExpenseTable";
 
-const Table = () => {
+const Table = ({ ExpenseArray, handleDelete }) => {
   return (
     <div id="table">
       <h2>Expenses</h2>
@@ -13,9 +12,10 @@ const Table = () => {
             <th>Date</th>
             <th>Amount</th>
             <th>Type</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>{/* <Expense /> */}</tbody>
+        <ExpenseTable ExpenseArray={ExpenseArray} handleDelete={handleDelete} />
       </table>
     </div>
   );

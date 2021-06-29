@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const Form = () => {
-  const [ItemPurchased, setItemPurchased] = useState();
-  const [LocationOfPurchase, setLocationOfPurchase] = useState();
-  const [DateOfExpense, setDateOfExpense] = useState();
-  const [CostOfExpense, setCostOfExpense] = useState();
+const Form = ({ addExpense }) => {
+  const [ItemPurchased, setItemPurchased] = useState("");
+  const [LocationOfPurchase, setLocationOfPurchase] = useState("");
+  const [DateOfExpense, setDateOfExpense] = useState("");
+  const [CostOfExpense, setCostOfExpense] = useState("");
   const [PaymentMethod, setPaymentMethod] = useState("cash");
-  const [ExpenseArray, setExpenseArray] = useState([]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newExpense = {
@@ -15,12 +15,14 @@ const Form = () => {
       date: DateOfExpense,
       cost: CostOfExpense,
       method: PaymentMethod,
+      id: Date.now(),
     };
-
-    ExpenseArray.length
-      ? setExpenseArray((expense) => [expense, ...ExpenseArray])
-      : setExpenseArray([newExpense]);
-    e.target.reset();
+    addExpense(newExpense);
+    setItemPurchased("");
+    setLocationOfPurchase("");
+    setDateOfExpense("");
+    setCostOfExpense("");
+    setPaymentMethod("");
   };
 
   return (
@@ -33,6 +35,7 @@ const Form = () => {
             type="text"
             id="itemPurchased"
             placeholder="Item Purchased"
+            value={ItemPurchased}
             onChange={(e) => setItemPurchased(e.target.value)}
             required
           />
@@ -43,6 +46,7 @@ const Form = () => {
             type="text"
             id="location"
             placeholder="Location of Expense"
+            value={LocationOfPurchase}
             onChange={(e) => setLocationOfPurchase(e.target.value)}
             required
           />
@@ -52,8 +56,9 @@ const Form = () => {
           <input
             type="date"
             id="dateOfExpense"
-            required
+            value={DateOfExpense}
             onChange={(e) => setDateOfExpense(e.target.value)}
+            required
           />
         </div>
         <div className="inputField">
@@ -61,16 +66,19 @@ const Form = () => {
           <input
             type="number"
             id="costOfExpense"
-            required
+            placeholder="Cost of Item"
+            value={CostOfExpense}
             onChange={(e) => setCostOfExpense(e.target.value)}
+            required
           />
         </div>
         <div className="inputField">
           <label htmlFor="paymentMethod">Payment Method</label>
           <select
             id="paymentMethod"
-            required
+            value={PaymentMethod}
             onChange={(e) => setPaymentMethod(e.target.value)}
+            required
           >
             <option value="cash">Cash</option>
             <option value="debt">Debt</option>
