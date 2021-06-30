@@ -18,75 +18,99 @@ const Form = ({ addExpense }) => {
       id: Date.now(),
     };
     addExpense(newExpense);
+
     setItemPurchased("");
     setLocationOfPurchase("");
     setDateOfExpense("");
     setCostOfExpense("");
-    setPaymentMethod("");
+    setPaymentMethod("cash");
   };
 
   return (
-    <div className="Form">
-      <h2>Add an item:</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="inputField">
-          <label htmlFor="itemPurchased">What:</label>
-          <input
-            type="text"
-            id="itemPurchased"
-            placeholder="Item Purchased"
-            value={ItemPurchased}
-            onChange={(e) => setItemPurchased(e.target.value)}
-            required
-          />
-        </div>
-        <div className="inputField">
-          <label htmlFor="location">Where:</label>
-          <input
-            type="text"
-            id="location"
-            placeholder="Location of Expense"
-            value={LocationOfPurchase}
-            onChange={(e) => setLocationOfPurchase(e.target.value)}
-            required
-          />
-        </div>
-        <div className="inputField">
-          <label htmlFor="dateOfExpense">Date:</label>
-          <input
-            type="date"
-            id="dateOfExpense"
-            value={DateOfExpense}
-            onChange={(e) => setDateOfExpense(e.target.value)}
-            required
-          />
-        </div>
-        <div className="inputField">
-          <label htmlFor="costOfExpense">Cost:</label>
-          <input
-            type="number"
-            id="costOfExpense"
-            placeholder="Cost of Item"
-            value={CostOfExpense}
-            onChange={(e) => setCostOfExpense(e.target.value)}
-            required
-          />
-        </div>
-        <div className="inputField">
-          <label htmlFor="paymentMethod">Payment Method</label>
-          <select
-            id="paymentMethod"
-            value={PaymentMethod}
-            onChange={(e) => setPaymentMethod(e.target.value)}
-            required
-          >
-            <option value="cash">Cash</option>
-            <option value="debt">Debt</option>
-            <option value="credit">Credit</option>
-          </select>
-        </div>
-        <button>Add Expense</button>
-      </form>
+    <div className="row col-4">
+      <div className="container">
+        <form
+          onSubmit={handleSubmit}
+          className="border rounded bg-dark bg-gradient p-4"
+        >
+          <div className="inputField">
+            <label htmlFor="itemPurchased" className="form-label">
+              What:
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              id="itemPurchased"
+              placeholder="Item Purchased"
+              value={ItemPurchased}
+              onChange={(e) => setItemPurchased(e.target.value)}
+              required
+            />
+          </div>
+          <div className="inputField">
+            <label htmlFor="location" className="form-label">
+              Where:
+            </label>
+            <input
+              className="form-control"
+              type="text"
+              id="location"
+              placeholder="Location of Expense"
+              value={LocationOfPurchase}
+              onChange={(e) => setLocationOfPurchase(e.target.value)}
+              required
+            />
+          </div>
+          <div className="inputField">
+            <label htmlFor="dateOfExpense" className="form-label">
+              Date:
+            </label>
+            <input
+              className="form-control"
+              type="date"
+              id="dateOfExpense"
+              value={DateOfExpense}
+              onChange={(e) => setDateOfExpense(e.target.value)}
+              required
+            />
+          </div>
+          <div className="inputField">
+            <label htmlFor="costOfExpense" className="form-label">
+              Cost:
+            </label>
+            <div className="input-group">
+              <span className="input-group-text">$</span>
+              <input
+                className="form-control"
+                type="number"
+                id="costOfExpense"
+                placeholder="Cost of Item"
+                value={CostOfExpense}
+                onChange={(e) => setCostOfExpense(e.target.value)}
+                required
+              />
+              <span className="input-group-text">.00</span>
+            </div>
+          </div>
+          <div className="inputField">
+            <label htmlFor="paymentMethod" className="form-label">
+              Payment Method
+            </label>
+            <select
+              className="form-control"
+              id="paymentMethod"
+              value={PaymentMethod}
+              onChange={(e) => setPaymentMethod(e.target.value)}
+              required
+            >
+              <option value="cash">Cash</option>
+              <option value="debt">Debt</option>
+              <option value="credit">Credit</option>
+            </select>
+          </div>
+          <button className="btn btn-lg btn-secondary mt-4">Add Expense</button>
+        </form>
+      </div>
     </div>
   );
 };

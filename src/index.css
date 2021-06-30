@@ -1,16 +1,24 @@
-.App {
-  display: flex;
-  justify-content: space-around;
+body {
+  background-image: url(/src/photos/React_Expense_Tracker_Background.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
-h2 > .table {
-  text-align: center;
+form > button:hover {
+  box-shadow: 0 3px 3px -0.3px black;
+  transform: translateY(0.5px);
+}
+
+.form-label {
+  color: ghostwhite;
+  margin-bottom: 2px;
 }
 
 .inputField {
-  display: flex;
+  margin: 10px 0 1px 0;
 }
 
-th {
-  min-width: 75px;
+i:hover {
+  color: red;
+  font-size: large;
 }
