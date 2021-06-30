@@ -13,14 +13,17 @@ const App = () => {
       : setExpenseArray([newExpense]);
 
     ExpenseArray.length
-      ? localStorage.setItem("ExpenseArray", JSON.stringify(ExpenseArray))
-      : localStorage.setItem("ExpenseArray", JSON.stringify(newExpense));
+      ? localStorage.setItem(
+          "ExpenseArray",
+          JSON.stringify([...ExpenseArray, newExpense])
+        )
+      : localStorage.setItem("ExpenseArray", JSON.stringify([newExpense]));
   };
 
   const handleDelete = (id) => {
     const newArray = ExpenseArray.filter((expense) => expense.id !== id);
     setExpenseArray(newArray);
-    localStorage.setItem("expenseArray", JSON.stringify(newArray));
+    localStorage.setItem("ExpenseArray", JSON.stringify(newArray));
   };
 
   return (
