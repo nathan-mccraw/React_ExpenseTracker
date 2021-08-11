@@ -12,7 +12,7 @@ To use the Expense Tracker app:
 
 1.  Follow this [link](https://react-expense-track.herokuapp.com/) to use the app on your browser.
 
-2.  To use the application locally and to obtain the code base for the application, you can either download a zip file of the code and application or you can fork this repository to make changes and maintain version control.  You can download the code in a zip file by clicking "code" -> download zip from this repository dashboard (see picture below), extrtact the files from the zip file and skip to step 6.  If you wish to fork this repository then go to step 3.
+2.  To use the application locally and to obtain the code base for the application, you can either download a zip file of the code and application or you can fork this repository to make changes and maintain version control.  You can download the code in a zip file by clicking "code" -> download zip from this repository dashboard (see picture below), extract the files from the zip file and skip to step 6.  If you wish to fork this repository then go to step 3.
 
 ![download](https://user-images.githubusercontent.com/84479635/128920225-0fda44a9-dd2e-4cdc-bacb-4243dec977a2.JPG)
 
@@ -26,8 +26,8 @@ To use the Expense Tracker app:
 
 
 ## Summary
-This application is an expense tracker that allows the user to input data points of an expendure to include: date, place, item, amount, and payment type.  This data is displayed in a HTML table and the user may delete entries from the table.  This project was made using React App, Bootstrap CSS, and Nodejs.  The react app was initialized using create-react-app and functional components with hooks were implemented in the app.  Building this application taught the premise and basis for passing props and states from one component to another.
+This application is an expense tracker that allows the user to input data points of an expenditure to include: date, place, item, amount, and payment type.  This data is displayed in a HTML table and the user may delete entries from the table.  This project was made using React App, Bootstrap CSS, and Nodejs.  The react app was initialized using create-react-app and functional components with hooks were implemented in the app.  Building this application taught the premise and basis for passing props and states from one component to another.
  
 
 #### Author
-Nathan McCraw -- Software Developer [LinkedIn](https://www.linkedin.com/in/nathan-mccraw-5291535b/) [Personal Website - In Production]
+Nathan McCraw -- Software Developer [LinkedIn](https://www.linkedin.com/in/nathan-mccraw-5291535b/) | [Personal Website](https://www.nathanmccraw.com/)
